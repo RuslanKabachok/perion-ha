@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.scene {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;  
+    align-items: flex-end; 
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 50%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50%; 
+
+    background-color: #DEEDF8; 
+
+    z-index: 1;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 95vw;
+    min-height: 95vh;
+
+    background-image: url('../images/clouds.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 25px;
+}
+
+.product {
+    height: 550px;
+    width: 340px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+
+    transform: translate(-80px, -70px);
+}
+
+.product img {
+    max-height: 550px;
+    width: auto;
+    display: block;
+}
+
+.product-pink img{
+    transform: translateX(20px);
+}
+
+.product-purple img{
+    width: 430px;
+    transform: translate(-19px, -45px);
+}
+
+.product-orange img{
+    z-index: 3;
+    transform: translate(10px, 38px);
+}
