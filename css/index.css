@@ -12,16 +12,26 @@
 
 .hero {
     display: flex;
-    justify-content: center;  
-    align-items: flex-end; 
+    justify-content: center;
+    align-items: flex-end;
 
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 50%;
+}
+
+.hero__bg {
+    background-image: url('../images/clouds.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+
+    width: 90%;
+    height: 95%;
+
+    border-radius: 25px;
 
     position: relative;
-    overflow: hidden;
 }
 
 .hero::after {
@@ -31,11 +41,9 @@
     left: 0;
 
     width: 100%;
-    height: 50%; 
+    height: 50%;
 
-    background-color: #DEEDF8; 
-
-    z-index: 1;
+    background-color: #DEEDF8;
 }
 
 .products {
@@ -43,18 +51,10 @@
     justify-content: center;
     align-items: center;
 
-    min-width: 95vw;
-    min-height: 95vh;
-
-    background-image: url('../images/clouds.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-
     position: relative;
-    overflow: hidden;
+    transform: translate(-12px, 290px);
 
-    border-radius: 25px;
+    z-index: 1;
 }
 
 .product {
@@ -62,27 +62,169 @@
     width: 340px;
     display: flex;
     align-items: flex-end;
-    z-index: 2;
-
     transform: translate(-80px, -70px);
+
+    position: relative;
 }
 
-.product img {
+.main-img {
     max-height: 550px;
     width: auto;
     display: block;
 }
 
-.product-pink img{
+.reflection {
+    position: absolute;
+
+    transform: scaleY(-1);
+    opacity: 0.7;
+
+    mask-image: linear-gradient(to top,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.1) 35%,
+            transparent 50%);
+    z-index: 5;
+    overflow: hidden;
+}
+
+.product-pink .main-img {
     transform: translateX(20px);
 }
 
-.product-purple img{
+.product-pink .reflection {
+    width: 550px;
+    top: 77%;
+    left: 20px;
+}
+
+.product-purple .main-img {
     width: 430px;
     transform: translate(-19px, -45px);
 }
 
-.product-orange img{
-    z-index: 3;
+.product-purple .reflection {
+    width: 426px;
+    top: 86%;
+    left: -15px;
+}
+
+.product-orange .main-img {
+    z-index: 2;
     transform: translate(10px, 38px);
+}
+
+.product-orange .reflection {
+    width: 478px;
+    top: 75%;
+    left: 11px;
+}
+
+.hotspot {
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: white;
+    color: #182e73;
+    font-size: 55px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+    box-shadow:
+        0 0 20px rgba(255, 204, 204, 0.8),
+        0 0 60px rgba(255, 203, 203, 0.6),
+        0 0 100px rgba(255, 210, 210, 0.4);
+}
+
+.hotspot--pink {
+    top: 316px;
+    left: 18%;
+}
+
+.hotspot--orange {
+    top: 271px;
+    left: 50%;
+}
+
+.hotspot--purple {
+    top: 319px;
+    left: 73%;
+}
+
+.hero__bottom {
+    position: absolute;
+    bottom: 210px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.bottom-title {
+    color: #182e73;
+    font-size: 57px;
+}
+
+.pin {
+    width: 10px;
+    height: 20px;
+}
+
+.hero__bottom-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.hero__bottom-btn {
+    padding: 18px 50px;
+    border-radius: 5px;
+    border: none;
+
+    background-color: #182e73;
+    color: rgb(251, 221, 230);
+
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.brand {
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #182e73;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background: #182e73;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location__label {
+    font-size: 14px;
+    opacity: 0.6;
 }
