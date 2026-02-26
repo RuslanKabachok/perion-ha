@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>Perion</title>
 </head>
 
 <body>
     <main class="scene">
-        <section class="hero">
+        <section class="hero frame-1">
             <div class="hero__bg">
-                <div class="products">
+            </div>
+            <div class="products">
                     <div class="product product-pink">
                         <img src="./images/pink.svg" alt="product pink" class="main-img">
                         <img src="./images/pink.svg" alt="product pink reflection" class="reflection">
@@ -27,17 +29,17 @@
                     </div>
                 </div>
                 <div class="hotspots">
-                    <div class="hotspot hotspot--pink">+</div>
-                    <div class="hotspot hotspot--orange">+</div>
-                    <div class="hotspot hotspot--purple">+</div>
+                    <a href="/cart.html" target="_blank" rel="noopener noreferrer" class="hotspot hotspot--pink">+</a>
+                    <a href="/cart.html" target="_blank" rel="noopener noreferrer" class="hotspot hotspot--orange">+</a>
+                    <a href="/cart.html" target="_blank" rel="noopener noreferrer" class="hotspot hotspot--purple">+</a>
                 </div>
-                <div class="hero__bottom">
+            <div class="hero__bottom">
                     <div>
                         <p class="bottom-title">Find your calm with our adaptogen infused range.</p>
                     </div>
 
                     <div class="hero__bottom-wrapper">
-                        <button class="hero__bottom-btn">ADD TO CART</button>
+                        <a class="hero__bottom-btn" target="_blank" rel="noopener noreferrer" href="/cart.html">ADD TO CART</a>
 
                         <span class="brand">TRIP</span>
 
@@ -53,9 +55,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
