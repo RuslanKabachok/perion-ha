@@ -1,13 +1,30 @@
 const hero = document.querySelector('.hero');
+const frames = ['frame-1', 'frame-2', 'frame-3'];
+let currentFrame = 0;
 
-hero.classList.add('frame-1');
+function goToFrame(index) {
+    hero.classList.remove(...frames);
+    hero.classList.add(frames[index]);
+}
 
-setTimeout(() => {
-    hero.classList.remove('frame-1');
-    hero.classList.add('frame-2');
-}, 1200);
+goToFrame(0);
 
-setTimeout(() => {
-    hero.classList.remove('frame-2');
-    hero.classList.add('frame-3');
-}, 2800);
+let isScrolling = false;
+
+window.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+
+    if (e.deltaY > 0 && currentFrame < frames.length - 1) {
+        currentFrame++;
+        goToFrame(currentFrame);
+        isScrolling = true;
+        setTimeout(() => { isScrolling = false; }, 1000);
+    }
+
+    if (e.deltaY < 0 && currentFrame > 0) {
+        currentFrame--;
+        goToFrame(currentFrame);
+        isScrolling = true;
+        setTimeout(() => { isScrolling = false; }, 1000);
+    }
+});
